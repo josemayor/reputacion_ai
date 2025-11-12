@@ -1,1 +1,4 @@
 venv
+comandos.txt
+__pycache__
+mysite/db.sqlite3
