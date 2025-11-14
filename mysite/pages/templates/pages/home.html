@@ -17,7 +17,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>Agentic-Flow</h1>
+                    <h1>{{ greeting }}</h1>
+                    <p>Hay {{ options|length }} opciones disponibles:</p>
+                    <ul>
+                        {% for option in options %}
+                        <li> {{ option }} </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
