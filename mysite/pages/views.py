@@ -20,6 +20,11 @@ def home(request):
 class DesignPageView(TemplateView):
     template_name = "pages/design-page.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["greeting"] = "Thank you for visiting."
+        return context
+
 
 class RunPageView(TemplateView):
     template_name = "pages/run-page.html"
