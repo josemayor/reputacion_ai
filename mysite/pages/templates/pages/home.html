@@ -1,19 +1,35 @@
 {% extends "pages/partials/base.html" %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-
-                <h1>{{ greeting }}</h1>
-                <p>Hay {{ options|length }} opciones disponibles:</p>
-                <ul>
-                    {% for option in options %}
-                        <li> {{ option }} </li>
-                    {% endfor %}
-                </ul>
-
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-light">
+                <form>
+                    <div class="mb-3">
+                        <label for="inputText1" class="form-label">Nombre de empresa</label>
+                        <input type="text" class="form-control" id="inputText1" aria-describedby="emailHelp">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Analizar gratis</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <h1>{{ greeting }}</h1>
+            <p>Hay {{ options|length }} opciones disponibles:</p>
+            <ul>
+                {% for option in options %}
+                <li> {{ option }} </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</div>
 {% endblock %}

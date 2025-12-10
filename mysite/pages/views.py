@@ -6,29 +6,15 @@ from django.views.generic import TemplateView
 # Create your views here.
 def home(request):
     context = {
-        "greeting": "Thank you for visiting.",
+        "greeting": "Descubre tu reputación con la IA",
         "options": [
-            "Option 1",
-            "Option 2",
-            "Option 3",
-            "Option 4",
+            ">> Input único. Barra de busqueda donde poner _Nombre_de_empresa_ o _Persona_",
+            "Multiconsulta. El sistema envía el prompt a 3 modelos seleccionados simultaneamente",
+            "Analisis de sentimiento básico: Positiva, Neutra o Negativa",
+            "Puntuación de salud de marca (ej 8/10)",
+            "Resumen ejecutivo. Usa un modelo pequeño y barato para generar las tres opiones y generar resumen de 2 lineas",
+            "-----------",
+            "A partir de aquí hay que pagar: Generar informe PDF completo con toda la información del análisis"
         ],
     }
     return render(request, "pages/home.html", context)
-
-
-class DesignPageView(TemplateView):
-    template_name = "pages/design-page.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["greeting"] = "Thank you for visiting."
-        return context
-
-
-class RunPageView(TemplateView):
-    template_name = "pages/run-page.html"
-
-
-class DebugPageView(TemplateView):
-    template_name = "pages/debug-page.html"
