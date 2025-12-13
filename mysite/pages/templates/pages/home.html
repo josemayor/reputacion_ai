@@ -1,22 +1,31 @@
 {% extends "pages/partials/base.html" %}
 
 {% block content %}
-<div class="container">
+<div class="container" style="margin-top: 120px;">
     <div class="row">
-        <div class="col">
-            <div class="alert alert-light">
-                <form>
-                    <div class="mb-3">
-                        <label for="inputText1" class="form-label">Nombre de empresa</label>
-                        <input type="text" class="form-control" id="inputText1" aria-describedby="emailHelp">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Analizar gratis</button>
-                </form>
-            </div>
+        <div class="d-none d-lg-block col-lg-1 col-xl-2"><br></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-8">
+            <p class="text-light display-6" style="margin-bottom: 0px;">Analiza tu reputación online con IA</p>
+            <p class="text-secondary" style="margin-bottom: 20px;">Introduce el nombre de la empresa o persona para
+                recibir
+                un informe instantáneo, y conocer qué opinan las Inteligencias Artificiales sobre su reputación en
+                Internet.</p>
+
+            <form method="post" action="{% url 'analyze' %}">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="query" aria-describedby="emailHelp" name="query"
+                        placeholder="Introduce el nombre de una empresa o persona">
+                    <button type="submit" class="btn btn-primary btn-lg">Analizar </button>
+                </div>
+            </form>
+
         </div>
+        <div class="d-none d-lg-block col-lg-1 col-xl-2"><br></div>
     </div>
 </div>
 
+<!-- 
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -32,4 +41,5 @@
         </div>
     </div>
 </div>
+-->
 {% endblock %}

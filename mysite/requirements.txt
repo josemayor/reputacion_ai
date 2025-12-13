@@ -1,5 +1,6 @@
 # Run requirements with: pip install -r requirements.txt
-django>=5.2,<6.0
-black>=25.9,<26.0
-pytest>=8.0.0
-pytest-django>=4.7.0
+django~=5.2
+black~=25.9
+pytest~=9.0.0
+pytest-django~=4.11.0
+python-dotenv~=1.2.1
