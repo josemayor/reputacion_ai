@@ -1,4 +1,4 @@
-# load a view when the user visits the root URL
+""" Load a view when the user visits the root URL """
 from django.urls import path
 from . import views
 

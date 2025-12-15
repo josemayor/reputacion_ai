@@ -1,14 +1,15 @@
+""" Vistas para la aplicación de páginas. """
 import os
 import json
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import TemplateView
 from django.template.loader import get_template
 from xhtml2pdf import pisa
 
 from openai import OpenAI
 
+# Modelo LLM que se utiliza para el análisis de reputación online
 MODEL_LLM = "openai/gpt-oss-120b"
 
 
@@ -22,7 +23,7 @@ def home(request):
 def analyze(request):
     """ Recibe el nombre de la empresa o persona. A continuación lo analiza """
     query = request.POST.get("query")
-    global MODEL_LLM
+
 
     # limitación del tamaño de la cadena, a 50 caracteres
     if len(query) > 50:
@@ -85,10 +86,10 @@ Reglas importantes:
 
 
 def generate_pdf(request):
+    """ Genera un informe PDF con el análisis de reputación online de una empresa o persona """
     if request.method == "POST":
         query = request.POST.get("query")
-        global MODEL_LLM
-        
+
         # Prompt más detallado para el informe PDF
         prompt_template = """
         Eres un experto analista de reputación corporativa. Tu regla más importante es no inventar NUNCA información. Si no
@@ -132,9 +133,9 @@ def generate_pdf(request):
             api_key=groq_api_key,
             base_url="https://api.groq.com/openai/v1"
         )
-        
+
         prompt_final = prompt_template.format(query=query)
-        
+
         try:
             completion = client.chat.completions.create(
                 model=MODEL_LLM,
@@ -153,18 +154,18 @@ def generate_pdf(request):
         context = {'report': report_data}
         response = HttpResponse(content_type='application/pdf')
         response['Content-Disposition'] = f'attachment; filename="reporte_{query}.pdf"'
-        
+
         template = get_template(template_path)
         html = template.render(context)
-        
+
         # Crear PDF
         pisa_status = pisa.CreatePDF(
            html, dest=response
         )
-        
+
         if pisa_status.err:
-           return HttpResponse('Hubo errores al generar el PDF <pre>' + html + '</pre>')
-            
+            return HttpResponse('Hubo errores al generar el PDF <pre>' + html + '</pre>')
+
         return response
-    
+
     return HttpResponse("Método no permitido", status=405)
