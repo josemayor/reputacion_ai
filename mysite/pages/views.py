@@ -1,13 +1,13 @@
 """ Vistas para la aplicación de páginas. """
-import os
 import json
-
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.template.loader import get_template
-from xhtml2pdf import pisa
+import os
 
 from openai import OpenAI
+from xhtml2pdf import pisa
+
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.template.loader import get_template
 
 # Modelo LLM que se utiliza para el análisis de reputación online
 MODEL_LLM = "openai/gpt-oss-120b"
