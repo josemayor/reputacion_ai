@@ -1,6 +1,5 @@
-AgenticFlow
+Reputación AI
 
-Un framework de automatización inteligente basado en agentes IA, inspirado en UiPath AI Agentic, pero open-source y educativo.
-El objetivo es crear un sistema que permita diseñar, entrenar y ejecutar flujos de automatización con agentes IA que tomen
-decisiones autónomas usando modelos de lenguaje (LLM), visión por computadora y aprendizaje por refuerzo básico.
-
+Análisis de reputación online y monitoreo de marca.
+Introduces el nombre de una empresa o persona y el sistema te devuelve un informe básico con el análisis de reputación online.
+Posteriormente se ofrece la posibilidad, de generar y descargar, un informe en PDF mas completo y elaborado.
