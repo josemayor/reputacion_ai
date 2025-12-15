@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+
+            @frame footer_frame {
+                /* Another static Frame */
+                -pdf-frame-content: footerContent;
+                bottom: 1cm;
+                margin-left: 2cm;
+                margin-right: 2cm;
+                height: 1cm;
+            }
+        }
+
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #2980b9;
+            font-size: 18px;
+            margin-top: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .meta-info {
+            color: #7f8c8d;
+            font-size: 12px;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+
+        .sentiment-box {
+            background-color: #eef7fb;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        ul {
+            list-style-type: circle;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* Sentiment colors */
+        .positive {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .negative {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        .neutral {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        #footerContent {
+            font-size: 10px;
+            text-align: center;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{ report.titulo }}</h1>
+    <div class="meta-info">Generado el: {{ report.fecha }}</div>
+
+    <div class="section">
+        <h2>Información General</h2>
+        <div class="box">
+            {{ report.informacion_general|safe }}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Resumen Ejecutivo</h2>
+        <div class="box">
+            {{ report.resumen_ejecutivo|safe }}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Análisis de Sentimiento</h2>
+        <div class="sentiment-box">
+            <p><strong>Positivo:</strong> <span class="positive">{{ report.analisis_sentimiento.positivo_pct }}%</span>
+            </p>
+            <p><strong>Negativo:</strong> <span class="negative">{{ report.analisis_sentimiento.negativo_pct }}%</span>
+            </p>
+            <p><strong>Neutro:</strong> <span class="neutral">{{ report.analisis_sentimiento.neutro_pct }}%</span></p>
+            <hr>
+            <p><em>{{ report.analisis_sentimiento.explicacion }}</em></p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Fuentes Principales</h2>
+        <ul>
+            {% for fuente in report.fuentes_principales %}
+            <li>{{ fuente }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Puntos Críticos Detectados</h2>
+        <ul>
+            {% for punto in report.puntos_criticos %}
+            <li>{{ punto }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Recomendaciones Estratégicas</h2>
+        <div class="box">
+            <ul>
+                {% for recomendacion in report.recomendaciones %}
+                <li>{{ recomendacion }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div id="footerContent">
+        Informe generado con IA - Reputación Online
+    </div>
+</body>
+
+</html>

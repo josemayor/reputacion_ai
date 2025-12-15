@@ -5,11 +5,12 @@
     <div class="row">
         <div class="d-none d-lg-block col-lg-1 col-xl-2"><br></div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-8">
-            <p class="text-light display-6" style="margin-bottom: 0px;">Analiza tu reputación online con IA</p>
-            <p class="text-secondary" style="margin-bottom: 20px;">Introduce el nombre de la empresa o persona para
-                recibir
-                un informe instantáneo, y conocer qué opinan las Inteligencias Artificiales sobre su reputación en
-                Internet.</p>
+            <p class="text-light display-6" style="margin-bottom: 0px;">Analiza tu reputación online</p>
+            <p class="text-secondary" style="margin-bottom: 20px;">
+                Introduce el nombre de la empresa o persona para recibir un informe instantáneo,
+                y conocer qué resultados se obtienen al realizar una búsqueda con IAs sobre su
+                reputación en Internet.
+            </p>
 
             <form method="post" action="{% url 'analyze' %}">
                 {% csrf_token %}
@@ -24,22 +25,4 @@
         <div class="d-none d-lg-block col-lg-1 col-xl-2"><br></div>
     </div>
 </div>
-
-<!-- 
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-
-            <h1>{{ greeting }}</h1>
-            <p>Hay {{ options|length }} opciones disponibles:</p>
-            <ul>
-                {% for option in options %}
-                <li> {{ option }} </li>
-                {% endfor %}
-            </ul>
-
-        </div>
-    </div>
-</div>
--->
 {% endblock %}
