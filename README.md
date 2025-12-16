@@ -6,6 +6,7 @@ Posteriormente se ofrece la posibilidad, de generar y descargar, un informe en P
 
 ## Antes de empezar
 
-Es necesario crear un fichero llamado _.env_ dentro de la carpeta mysite. Este fichero debe contener una key válida para
-GROQ.
-Puedes crear una key gratuita en la web de groq: _https://groq.com/_
+Es necesario crear un fichero llamado _.env_ dentro de la carpeta mysite. Este fichero debe contener una key válida para GROQ. Puedes crear una key gratuita en la web de groq: _https://groq.com/_
+
+Es necesario activar el siguiente modelo de IA en groq:
+- openai/gpt-oss-120b
