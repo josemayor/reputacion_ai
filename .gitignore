@@ -1,5 +1,6 @@
 venv
 comandos.txt
+activate.bat
 __pycache__
 mysite/db.sqlite3
 mysite/.env
