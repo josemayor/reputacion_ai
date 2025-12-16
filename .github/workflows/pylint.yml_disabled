@@ -1,3 +1,6 @@
+# This file is disabled
+# No termina de funcionar bien. Revisar!!!
+
 name: Pylint
 
 on:
