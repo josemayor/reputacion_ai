@@ -22,4 +22,3 @@ jobs:
       - name: check pytests are available
         run: |
           pytest
-
