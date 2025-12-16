@@ -1,11 +1,11 @@
 # Run requirements with: pip install -r requirements.txt
-django~=5.2
-black~=25.9
-pytest~=9.0.0
-pytest-django~=4.11.0
-pytest-cov~=7.0.0
-python-dotenv~=1.2.1
-openai~=1.50.0
-httpx<0.28.0
-xhtml2pdf
-pylint
+django ~= 5.2
+black ~= 25.9
+pytest ~= 9.0
+pytest-django ~= 4.11
+pytest-cov ~= 7.0
+python-dotenv ~= 1.2.1
+openai ~= 1.50.0
+httpx < 0.28.0
+xhtml2pdf ~= 0.2
+pylint ~= 4.0
