@@ -24,7 +24,7 @@ Para ver la aplicación en funcionamiento, consulte las siguientes capturas:
 
 ### Descargar ejemplo de informe PDF generado
 ![Descargar informe PDF](docs/screenshots/download_pdf_placeholder.pdf)
-*Botón para descargar el informe ejecutivo generado en formato PDF de la empresa Mercadona en España.*
+*ejecutivo generado en formato PDF de la empresa Microsoft Corp.*
 
 ## Requisitos Previos
 
