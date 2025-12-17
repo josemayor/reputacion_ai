@@ -6,6 +6,26 @@ Herramienta avanzada de análisis de reputación online y monitoreo de marca bas
 
 Esta aplicación permite introducir el nombre de una empresa o persona para obtener un análisis detallado de su presencia online. El sistema utiliza modelos de lenguaje (LLMs) para procesar información y devuelve métricas clave como sentimiento general, puntuación de salud de marca y un resumen ejecutivo. Además, ofrece la capacidad de generar exportables en PDF para la presentación de informes corporativos.
 
+## Demo y Capturas
+
+Para ver la aplicación en funcionamiento, consulte las siguientes capturas:
+
+### Panel de Análisis
+![Panel Principal](docs/screenshots/dashboard_placeholder.png)
+*Vista principal donde el usuario introduce la entidad a analizar.*
+
+### Informe breve
+![Informe breve](docs/screenshots/quick_report_placeholder.png)
+*Informe breve con el análisis de sentimiento general, puntuación de salud de marca y un resumen ejecutivo.*
+
+### Informe PDF Generado
+![Reporte PDF](docs/screenshots/pdf_sample.png)
+*Ejemplo, del informe ejecutivo generado en formato PDF.*
+
+### Descargar ejemplo de informe PDF generado
+![Descargar informe PDF](docs/screenshots/download_pdf_placeholder.pdf)
+*Botón para descargar el informe ejecutivo generado en formato PDF de la empresa Mercadona en España.*
+
 ## Requisitos Previos
 
 Antes de desplegar la aplicación, es necesario configurar las variables de entorno para el acceso a la API del modelo de lenguaje.
