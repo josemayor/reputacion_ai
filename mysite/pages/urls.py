@@ -1,9 +1,11 @@
-""" Load a view when the user visits the root URL """
+"""
+Configuración de URLs para la aplicación de páginas.
+"""
 from django.urls import path
-from . import views
+from .views import HomeView, AnalyzeView, GeneratePDFView
 
 urlpatterns = [
-    path("", views.home, name="home"),
-    path("analyze", views.analyze, name="analyze"),
-    path("generate-pdf", views.generate_pdf, name="generate_pdf"),
+    path("", HomeView.as_view(), name="home"),
+    path("analyze", AnalyzeView.as_view(), name="analyze"),
+    path("generate-pdf", GeneratePDFView.as_view(), name="generate_pdf"),
 ]
