@@ -1,5 +1,6 @@
 """
-Vistas para la gestión de páginas, análisis de reputación y generación de reportes.
+Vistas para la gestión de páginas, análisis de reputación y la generación
+de los reportes.
 """
 from xhtml2pdf import pisa
 
@@ -29,18 +30,19 @@ class AnalyzeView(View):
         """
         Procesa la solicitud POST para realizar el análisis de reputación.
 
-        Recibe una consulta ('query') del formulario, utiliza el servicio de análisis
-        para obtener métricas de sentimiento, y renderiza la plantilla de resultados
-        con los datos obtenidos.
+        Recibe una consulta ('query') del formulario, utiliza el servicio de
+        análisis para obtener métricas de sentimiento, y renderiza la plantilla
+        de resultados con los datos obtenidos.
 
         Args:
             request: La solicitud HTTP.
 
         Returns:
-            HttpResponse: La plantilla 'pages/results.html' renderizada con los datos del análisis.
+            HttpResponse: La plantilla 'pages/results.html' renderizada con los
+            datos del análisis.
         """
         query = request.POST.get("query")
-        
+
         service = ReputationAnalysisService()
         data = service.analyze_reputation(query)
 
@@ -55,19 +57,21 @@ class GeneratePDFView(View):
         """
         Procesa la solicitud POST para generar un informe PDF detallado.
 
-        Recibe una consulta ('query'), solicita datos estructurados al servicio de análisis,
-        renderiza una plantilla HTML específica para PDF y la convierte a un archivo PDF descargable.
+        Recibe una consulta ('query'), solicita datos estructurados al servicio
+        de análisis, renderiza una plantilla HTML específica para PDF y la
+        convierte a un archivo PDF descargable.
 
         Args:
             request: La solicitud HTTP.
 
         Returns:
-            HttpResponse: Un archivo PDF adjunto o un mensaje de error si la generación falla.
+            HttpResponse: Un archivo PDF adjunto o un mensaje de error si la
+            generación falla.
         """
         query = request.POST.get("query")
-        
+
         service = ReputationAnalysisService()
-        
+
         try:
             report_data = service.generate_report_data(query)
         except Exception as e:

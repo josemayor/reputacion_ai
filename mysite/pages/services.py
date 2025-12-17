@@ -10,8 +10,9 @@ class ReputationAnalysisService:
     """
     Servicio encargado de la lógica de análisis de reputación online.
 
-    Esta clase encapsula la interacción con modelos de lenguaje (LLMs) a través de la API de Groq/OpenAI
-    para realizar análisis de sentimiento y generar informes detallados.
+    Esta clase encapsula la interacción con modelos de lenguaje (LLMs) a través
+    de la API de Groq/OpenAI para realizar análisis de sentimiento y generar
+    informes detallados.
     """
     def __init__(self):
         self.model_llm = "openai/gpt-oss-120b"

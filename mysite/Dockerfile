@@ -1,18 +1,25 @@
-# Dockerfile
 FROM python:3.14-slim
 
-# Establecer directorio de trabajo
 WORKDIR /app
 
-# Copiar requirements e instalar dependencias
 COPY requirements.txt .
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    python3-dev \
+    python3-cffi \
+    python3-brotli \
+    libpango-1.0-0 \
+    libpangoft2-1.0-0 \
+    libcairo2 \
+    libcairo2-dev \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar el proyecto
 COPY . .
 
-# Exponer puerto
 EXPOSE 8000
 
-# Comando por defecto
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

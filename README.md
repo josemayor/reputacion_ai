@@ -1,12 +1,44 @@
 # Reputación AI
 
-Análisis de reputación online y monitoreo de marca.
-Introduces el nombre de una empresa o persona y el sistema te devuelve un informe básico con el análisis de reputación online.
-Posteriormente se ofrece la posibilidad, de generar y descargar, un informe en PDF mas completo y elaborado.
+Herramienta avanzada de análisis de reputación online y monitoreo de marca basada en Inteligencia Artificial.
 
-## Antes de empezar
+## Descripción General
 
-Es necesario crear un fichero llamado _.env_ dentro de la carpeta mysite. Este fichero debe contener una key válida para GROQ. Puedes crear una key gratuita en la web de groq: _https://groq.com/_
+Esta aplicación permite introducir el nombre de una empresa o persona para obtener un análisis detallado de su presencia online. El sistema utiliza modelos de lenguaje (LLMs) para procesar información y devuelve métricas clave como sentimiento general, puntuación de salud de marca y un resumen ejecutivo. Además, ofrece la capacidad de generar exportables en PDF para la presentación de informes corporativos.
 
-Es necesario activar el siguiente modelo de IA en groq:
-- openai/gpt-oss-120b
+## Requisitos Previos
+
+Antes de desplegar la aplicación, es necesario configurar las variables de entorno para el acceso a la API del modelo de lenguaje.
+
+### Configuración del Entorno (.env)
+
+Cree un archivo `.env` en el directorio `mysite/` con las siguientes credenciales. Puede obtener su API Key gratuita en [Groq Console](https://console.groq.com/).
+
+```bash
+# mysite/.env
+GROQ_API_KEY=gsk_...
+```
+
+**Nota:** Asegúrese de que el modelo `openai/gpt-oss-120b` (o el configurado en `services.py`) esté disponible en su cuenta.
+
+## Despliegue con Docker (Containerization)
+
+Este proyecto está totalmente "dockerizado" para facilitar su despliegue y orquestación.
+
+### Construcción y Ejecución
+
+Para levantar el entorno completo (build & run), utilice Docker Compose. Este comando construirá la imagen optimizada y ejecutará el contenedor exponiendo el servicio en el puerto `8000`.
+
+```bash
+docker-compose up --build
+```
+
+### Servicios
+
+- **Web**: Aplicación Django accesible en `http://localhost:8000`.
+
+## Estructura del Proyecto
+
+- `mysite/`: Código fuente de la aplicación Django.
+- `mysite/Dockerfile`: Definición de la imagen de contenedor (basada en Python Slim).
+- `mysite/docker-compose.yml`: Orquestación de servicios.
