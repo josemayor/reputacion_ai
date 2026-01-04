@@ -1,4 +1,3 @@
-[![English](https://img.shields.io/badge/Language-English-blue)](README.md)
 [![Español](https://img.shields.io/badge/Language-Español-red)](README.es.md)
 
 # Reputation AI
@@ -15,11 +14,11 @@ To see the application in action, please refer to the following screenshots:
 
 ### Analysis Panel
 ![Panel Principal](docs/screenshots/dashboard_placeholder.png)
-*Vista principal where the user introduces the entity to analyze.*
+*Screenshot of the analysis panel where the user introduces the entity to analyze.*
 
 ### Quick Report
 ![Informe breve](docs/screenshots/quick_report_placeholder.png)
-*Informe breve with general sentiment analysis, brand health score, and an executive summary.*
+*Screenshot of the quick report with general sentiment analysis, brand health score, and an executive summary.*
 
 ### Generated PDF Report
 ![Reporte PDF](docs/screenshots/pdf_sample.png)
@@ -27,7 +26,7 @@ To see the application in action, please refer to the following screenshots:
 
 ### Download Example Generated PDF Report
 ![Descargar informe PDF](docs/screenshots/download_pdf_placeholder.pdf)
-*ejecutivo generado en formato PDF de la empresa Microsoft Corp.*
+*Example of the executive report generated in PDF format of the Microsoft Corp.*
 
 ## Previous Requirements
 

@@ -1,5 +1,4 @@
 [![English](https://img.shields.io/badge/Language-English-blue)](README.md)
-[![Español](https://img.shields.io/badge/Language-Español-red)](README.es.md)
 
 # Reputación AI
 
