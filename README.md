@@ -1,64 +1,67 @@
-# Reputación AI
+[![English](https://img.shields.io/badge/Language-English-blue)](README.md)
+[![Español](https://img.shields.io/badge/Language-Español-red)](README.es.md)
 
-Herramienta avanzada de análisis de reputación online y monitoreo de marca basada en Inteligencia Artificial.
+# Reputation AI
 
-## Descripción General
+Advanced reputation analysis and brand monitoring tool based on Artificial Intelligence.
 
-Esta aplicación permite introducir el nombre de una empresa o persona para obtener un análisis detallado de su presencia online. El sistema utiliza modelos de lenguaje (LLMs) para procesar información y devuelve métricas clave como sentimiento general, puntuación de salud de marca y un resumen ejecutivo. Además, ofrece la capacidad de generar exportables en PDF para la presentación de informes corporativos.
+## General Description
 
-## Demo y Capturas
+This application allows you to enter the name of a company or person to obtain a detailed analysis of their online presence. The system uses language models (LLMs) to process information and returns key metrics such as general sentiment, brand health score, and an executive summary. Additionally, it offers the ability to generate exportable PDFs for corporate reports.
 
-Para ver la aplicación en funcionamiento, consulte las siguientes capturas:
+## Demo and Screenshots
 
-### Panel de Análisis
+To see the application in action, please refer to the following screenshots:
+
+### Analysis Panel
 ![Panel Principal](docs/screenshots/dashboard_placeholder.png)
-*Vista principal donde el usuario introduce la entidad a analizar.*
+*Vista principal where the user introduces the entity to analyze.*
 
-### Informe breve
+### Quick Report
 ![Informe breve](docs/screenshots/quick_report_placeholder.png)
-*Informe breve con el análisis de sentimiento general, puntuación de salud de marca y un resumen ejecutivo.*
+*Informe breve with general sentiment analysis, brand health score, and an executive summary.*
 
-### Informe PDF Generado
+### Generated PDF Report
 ![Reporte PDF](docs/screenshots/pdf_sample.png)
-*Ejemplo, del informe ejecutivo generado en formato PDF.*
+*Example of the executive report generated in PDF format.*
 
-### Descargar ejemplo de informe PDF generado
+### Download Example Generated PDF Report
 ![Descargar informe PDF](docs/screenshots/download_pdf_placeholder.pdf)
 *ejecutivo generado en formato PDF de la empresa Microsoft Corp.*
 
-## Requisitos Previos
+## Previous Requirements
 
-Antes de desplegar la aplicación, es necesario configurar las variables de entorno para el acceso a la API del modelo de lenguaje.
+Before deploying the application, it is necessary to configure the environment variables for access to the language model API.
 
-### Configuración del Entorno (.env)
+### Environment Configuration (.env)
 
-Cree un archivo `.env` en el directorio `mysite/` con las siguientes credenciales. Puede obtener su API Key gratuita en [Groq Console](https://console.groq.com/).
+Create a `.env` file in the `mysite/` directory with the following credentials. You can obtain your free API Key at [Groq Console](https://console.groq.com/).
 
 ```bash
 # mysite/.env
 GROQ_API_KEY=gsk_...
 ```
 
-**Nota:** Asegúrese de que el modelo `openai/gpt-oss-120b` (o el configurado en `services.py`) esté disponible en su cuenta.
+**Note:** Ensure that the model `openai/gpt-oss-120b` (or the one configured in `services.py`) is available in your account.
 
-## Despliegue con Docker (Containerization)
+## Deploy with Docker (Containerization)
 
-Este proyecto está totalmente "dockerizado" para facilitar su despliegue y orquestación.
+This project is fully "dockerized" to facilitate its deployment and orchestration.
 
-### Construcción y Ejecución
+### Construction and Execution
 
-Para levantar el entorno completo (build & run), utilice Docker Compose. Este comando construirá la imagen optimizada y ejecutará el contenedor exponiendo el servicio en el puerto `8000`.
+To raise the complete environment (build & run), use Docker Compose. This command will build the optimized image and run the container exposing the service on port `8000`.
 
 ```bash
 docker-compose up --build
 ```
 
-### Servicios
+### Services
 
-- **Web**: Aplicación Django accesible en `http://localhost:8000`.
+- **Web**: Django application accessible at `http://localhost:8000`.
 
-## Estructura del Proyecto
+## Project Structure
 
-- `mysite/`: Código fuente de la aplicación Django.
-- `mysite/Dockerfile`: Definición de la imagen de contenedor (basada en Python Slim).
-- `mysite/docker-compose.yml`: Orquestación de servicios.
+- `mysite/`: Django application source code.
+- `mysite/Dockerfile`: Container image definition (based on Python Slim).
+- `mysite/docker-compose.yml`: Service orchestration.
