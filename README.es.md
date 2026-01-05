@@ -64,3 +64,8 @@ docker-compose up --build
 - `mysite/`: Código fuente de la aplicación Django.
 - `mysite/Dockerfile`: Definición de la imagen de contenedor (basada en Python Slim).
 - `mysite/docker-compose.yml`: Orquestación de servicios.
+
+### Acerca de mi
+Senior developer (20+ años PHP/MySQL e-commerce) en transición a AI/ML.
+👔 Abierto a roles remotos AI/ML roles en consultorías europeas
+📧 Contacto: hola@josemayor.dev | LinkedIn: https://www.linkedin.com/in/josemayor-ai-ml-developer/
