@@ -1,5 +1,8 @@
 [![English](https://img.shields.io/badge/Language-English-blue)](README.md)
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Python 3.9](https://img.shields.io/badge/Python-3.14-green.svg)](https://shields.io/)
+
 # Reputación AI
 
 Herramienta avanzada de análisis de reputación online y monitoreo de marca basada en Inteligencia Artificial.
